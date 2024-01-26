@@ -4,6 +4,7 @@ import { CreateUserController } from "../modules/users/controllers/createUserCon
 import { ListUserController } from "../modules/users/controllers/listUserController";
 import { DeleteUserController } from "../modules/users/controllers/deleteUserController";
 import { ListUserByIdController } from "../modules/users/controllers/listUserByIdController";
+import { UpdateUserController } from "../modules/users/controllers/updateUserController";
 
 const userRoutes = Router();
 
@@ -21,6 +22,10 @@ userRoutes.get("/:id/list", (request, response) => {
 
 userRoutes.delete("/", (request, response) => {
   return new DeleteUserController().handle(request, response);
+});
+
+userRoutes.put("/", (request, response) => {
+  return new UpdateUserController().handle(request, response);
 });
 
 export { userRoutes };
