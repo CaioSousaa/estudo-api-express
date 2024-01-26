@@ -2,7 +2,7 @@ import { Router } from "express";
 
 import { CreateUserController } from "../modules/users/controllers/createUserController";
 // import { ListUserController } from "../modules/accounts/controllers/listUserController";
-// import { DeleteUserController } from "../modules/accounts/controllers/deleteUserController";
+import { DeleteUserController } from "../modules/users/controllers/deleteUserController";
 // import { ListUserByIdController } from "../modules/accounts/controllers/listUserByIdController";
 
 const userRoutes = Router();
@@ -19,8 +19,8 @@ userRoutes.post("/", (request, response) => {
 //   return new ListUserByIdController().handle(request, response);
 // });
 
-// userRoutes.delete("/", (request, response) => {
-//   return new DeleteUserController().handle(request, response);
-// });
+userRoutes.delete("/", (request, response) => {
+  return new DeleteUserController().handle(request, response);
+});
 
 export { userRoutes };
