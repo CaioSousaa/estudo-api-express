@@ -4,8 +4,8 @@ import { CreateAccountService } from "../services/createAccountController";
 
 class CreateAccountController {
   async handle(request: Request, response: Response) {
-    const { type_account, transfer_key, password, description } = request.body;
-    const { userId } = request.params;
+    const { type_account, transfer_key, password, description, userId } =
+      request.body;
 
     try {
       const createAccountDTO = new CreateAccountDTO();

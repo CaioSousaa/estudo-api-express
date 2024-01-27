@@ -3,7 +3,7 @@ import { CreateAccountController } from "../modules/accounts/controllers/createA
 
 const accountRoutes = Router();
 
-accountRoutes.post("/:id/create", (request, response) => {
+accountRoutes.post("/", (request, response) => {
   return new CreateAccountController().handle(request, response);
 });
 
