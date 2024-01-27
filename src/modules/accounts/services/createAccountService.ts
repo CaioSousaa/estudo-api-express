@@ -17,6 +17,16 @@ class CreateAccountService {
       throw new Error("Fill in the fields!!!");
     }
 
+    const validKey = await prismaClient.account.findFirst({
+      where: {
+        transfer_key: transfer_key,
+      },
+    });
+
+    if (validKey) {
+      throw new Error("key invalid");
+    }
+
     const userExist = await prismaClient.user.findFirst({
       where: {
         id: userId,

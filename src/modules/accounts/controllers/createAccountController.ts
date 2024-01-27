@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { CreateAccountDTO } from "../dto/CreateAccountDTO";
-import { CreateAccountService } from "../services/createAccountController";
+import { CreateAccountService } from "../services/createAccountService";
 
 class CreateAccountController {
   async handle(request: Request, response: Response) {
