@@ -1,5 +1,5 @@
 import prismaClient from "../../../prisma";
-import { ICreateAccoutnDTO, CreateAccountDTO } from "../dto/CreateAccountDTO";
+import { ICreateAccoutnDTO, CreateAccountDTO } from "../dto/ICreateAccountDTO";
 import { v4 as uuid } from "uuid";
 
 class CreateAccountService {

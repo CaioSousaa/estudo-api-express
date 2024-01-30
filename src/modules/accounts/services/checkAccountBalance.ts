@@ -1,5 +1,5 @@
 import prismaClient from "../../../prisma";
-import { ICheckAccountBalance } from "../dto/CheckAccountBalanceDTO";
+import { ICheckAccountBalance } from "../dto/ICheckAccountBalanceDTO";
 
 class CheckAccountBalanceService {
   async execute({ userId, password }: ICheckAccountBalance) {

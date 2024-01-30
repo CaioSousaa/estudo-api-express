@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateAccountDTO } from "../dto/CreateAccountDTO";
+import { CreateAccountDTO } from "../dto/ICreateAccountDTO";
 import { CreateAccountService } from "../services/createAccountService";
 
 class CreateAccountController {
