@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CheckAccountBalanceService } from "../services/checkAccountBalance";
+import { CheckAccountBalanceService } from "../services/checkAccountBalanceService";
 
 class CheckAccountBalanceController {
   async handle(request: Request, response: Response) {
@@ -9,9 +9,12 @@ class CheckAccountBalanceController {
     try {
       const checkAccountBalanceService = new CheckAccountBalanceService();
 
-      const balance = checkAccountBalanceService.execute({ password, userId });
+      const balance = await checkAccountBalanceService.execute({
+        password,
+        userId,
+      });
 
-      return response.status(200).send(balance);
+      return response.status(200).send(balance.toString());
     } catch (err) {
       console.log(err);
       return response.status(500).json({ message: "Internal server error!!!" });
