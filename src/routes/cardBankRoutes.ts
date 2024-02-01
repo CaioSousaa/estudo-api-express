@@ -2,6 +2,7 @@ import { Router } from "express";
 import { CreateCardBankController } from "../modules/card_bank/controllers/createCardBankController";
 import { ListCardBankController } from "../modules/card_bank/controllers/listCardBankController";
 import { CardTransactionController } from "../modules/card_bank/controllers/cardTransactionController";
+import { WithdrawController } from "../modules/card_bank/controllers/withdrawController";
 
 const cardBankRoutes = Router();
 
@@ -15,6 +16,10 @@ cardBankRoutes.get("/", (request, response) => {
 
 cardBankRoutes.patch("/", (request, response) => {
   return new CardTransactionController().handle(request, response);
+});
+
+cardBankRoutes.put("/:userId/withdraw", (request, response) => {
+  return new WithdrawController().handle(request, response);
 });
 
 export { cardBankRoutes };
