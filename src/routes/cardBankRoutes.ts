@@ -3,6 +3,7 @@ import { CreateCardBankController } from "../modules/card_bank/controllers/creat
 import { ListCardBankController } from "../modules/card_bank/controllers/listCardBankController";
 import { CardTransactionController } from "../modules/card_bank/controllers/cardTransactionController";
 import { WithdrawController } from "../modules/card_bank/controllers/withdrawController";
+import { DepositController } from "../modules/card_bank/controllers/depositController";
 
 const cardBankRoutes = Router();
 
@@ -20,6 +21,10 @@ cardBankRoutes.patch("/", (request, response) => {
 
 cardBankRoutes.put("/:userId/withdraw", (request, response) => {
   return new WithdrawController().handle(request, response);
+});
+
+cardBankRoutes.put("/:userId/deposit", (request, response) => {
+  return new DepositController().handle(request, response);
 });
 
 export { cardBankRoutes };
